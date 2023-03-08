@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
   <input type="text" ref="name">
   <button @click ="handleClick">Click Me</button>
-  <Modal />
+  <Modal header="Sign up for the Giveaway!"/>/**Prop is the string assigned to the name header*/
 </template>
 
 <script>

@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
   <input type="text" ref="name">
   <button @click ="handleClick">Click Me</button>
-  <Modal header="Sign up for the Giveaway!"/>/**Prop is the string assigned to the name header*/
+<Modal :header="header" :text = "text" theme ="sale"/><!--Prop is the string assigned to the name header-->
 </template>
 
 <script>
@@ -12,7 +12,9 @@ export default {
   components:{ Modal },
   data(){
     return{
-      title:'My First Vue App ♫'
+      title:'My First Vue App ♫',
+      header:"Sign up for the Giveaway!",
+      text:"It was made by me"
     }
   },
   methods:{

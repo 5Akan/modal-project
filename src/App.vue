@@ -1,8 +1,16 @@
 <template>
   <h1>{{title}}</h1>
-  <input type="text" ref="name">
-  <button @click ="handleClick">Click Me</button>
-<Modal :header="header" :text = "text" theme ="sale"/><!--Prop is the string assigned to the name header-->
+  <!-- <input type="text" ref="name">
+  <button @click ="handleClick">Click Me</button>-->
+  <div v-if="showModal"> 
+    <Modal :header="header" :text = "text" theme ="sale"/><!--Prop is the string assigned to the name header-->
+  </div>
+  <button @click="toggleModal">
+      <span v-if="showModal">Hide</span>
+      <span v-else>Show</span>
+    </button>
+  
+
 </template>
 
 <script>
@@ -14,13 +22,17 @@ export default {
     return{
       title:'My First Vue App ♫',
       header:"Sign up for the Giveaway!",
-      text:"It was made by me"
+      text:"It was made by me",
+      showModal:false
     }
   },
   methods:{
-     handleClick(){
-        console.log(this.$refs.name);
-        this.$refs.name.classList.add('active');
+    //  handleClick(){
+    //     console.log(this.$refs.name);
+    //     this.$refs.name.classList.add('active');
+    //  },
+     toggleModal(){
+       this.showModal=!this.showModal;
      }
   }
 }
@@ -40,4 +52,7 @@ export default {
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
   }
+button{
+  color: #2c3e50;
+}
 </style>

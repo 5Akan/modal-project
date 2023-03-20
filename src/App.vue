@@ -3,7 +3,8 @@
   <!-- <input type="text" ref="name">
   <button @click ="handleClick">Click Me</button>-->
   <div v-if="showModal"> 
-    <Modal :header="header" :text = "text" theme ="sale"/><!--Prop is the string assigned to the name header-->
+    <Modal :header="header" :text = "text" theme ="sale" @close="toggleModal"/><!--Prop is the string assigned to the name header-->
+    <!-- @close is the custom event listened to from the modal.vue -->
   </div>
   <button @click="toggleModal">
       <span v-if="showModal">Hide</span>

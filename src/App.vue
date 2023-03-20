@@ -6,11 +6,8 @@
     <Modal :header="header" :text = "text" theme ="sale" @close="toggleModal"/><!--Prop is the string assigned to the name header-->
     <!-- @close is the custom event listened to from the modal.vue -->
   </div>
-  <button @click="toggleModal">
-      <span v-if="showModal">Hide</span>
-      <span v-else>Show</span>
-    </button>
-  
+  <button @click.alt ="toggleModal">Open Modal (alt)</button>
+  <!-- Click Event Modifiers eg @click.alt -->
 
 </template>
 

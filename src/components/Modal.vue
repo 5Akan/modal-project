@@ -13,7 +13,7 @@ export default {
         methods:{
             closeModal(){
                 //Custom Events ($emit) can be fired from the modal and listened too from the parent(App.vue)
-                this.$emit('close')
+                this.$emit('close');
             }
         }
     }

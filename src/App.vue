@@ -3,8 +3,18 @@
   <!-- <input type="text" ref="name">
   <button @click ="handleClick">Click Me</button>-->
   <div v-if="showModal"> 
-    <Modal :header="header" :text = "text" theme ="sale" @close="toggleModal"/><!--Prop is the string assigned to the name header-->
+    <Modal  theme ="sale" @close="toggleModal"><!--Prop is the string assigned to the name header-->
     <!-- @close is the custom event listened to from the modal.vue -->
+    <!-- SLOT -->
+    <!-- Below show up in slot tag of Modal by default -->
+    <h1>Bring It</h1>
+    <p>Trying Something New</p>
+    <!-- Below are inside a temp and wont show in Slot tag by default -->
+    <template v-slot:links>
+      <a href="a">sign up now</a>
+      <a href="a">more info</a>
+    </template>
+    </Modal>
   </div>
   <button @click.alt ="toggleModal">Open Modal (alt)</button>
   <!-- Click Event Modifiers eg @click.alt -->

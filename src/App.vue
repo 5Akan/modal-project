@@ -16,7 +16,15 @@
     </template>
     </Modal>
   </div>
+  <div v-if="showModalTwo">
+    <Modal @close = "toggleModalTwo">
+      <template v-slot:linkstwo>
+      <p>The Challenge</p>
+    </template>
+    </Modal>
+  </div>
   <button @click.alt ="toggleModal">Open Modal (alt)</button>
+  <button @click="toggleModalTwo">Challenge</button>
   <!-- Click Event Modifiers eg @click.alt -->
 
 </template>
@@ -31,7 +39,8 @@ export default {
       title:'My First Vue App ♫',
       header:"Sign up for the Giveaway!",
       text:"It was made by me",
-      showModal:false
+      showModal:false,
+      showModalTwo:false
     }
   },
   methods:{
@@ -41,7 +50,11 @@ export default {
     //  },
      toggleModal(){
        this.showModal=!this.showModal;
+     },
+     toggleModalTwo(){
+       this.showModalTwo=!this.showModalTwo;
      }
+
   }
 }
 </script>

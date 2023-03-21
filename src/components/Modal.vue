@@ -5,6 +5,9 @@
             <div class="actions">
                 <slot name="links"></slot>
             </div>
+            <div class="challenge">
+                <slot name="linkstwo"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -74,4 +77,7 @@ export default {
     .modal.sale .actions a{
         color: white;
      }
+     .modal .challenge{
+        color: black;
+    }
 </style>

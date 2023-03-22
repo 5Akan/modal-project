@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
   <!-- <input type="text" ref="name">
   <button @click ="handleClick">Click Me</button>-->
-  <div v-if="showModal"> 
+  <teleport to =".modals" v-if="showModal"> 
     <Modal  theme ="sale" @close="toggleModal"><!--Prop is the string assigned to the name header-->
     <!-- @close is the custom event listened to from the modal.vue -->
     <!-- SLOT -->
@@ -15,14 +15,14 @@
       <a href="a">more info</a>
     </template>
     </Modal>
-  </div>
-  <div v-if="showModalTwo">
+  </teleport>
+  <teleport to = ".modals" v-if="showModalTwo">
     <Modal @close = "toggleModalTwo">
       <template v-slot:linkstwo>
       <p>The Challenge</p>
     </template>
     </Modal>
-  </div>
+  </teleport>
   <button @click.alt ="toggleModal">Open Modal (alt)</button>
   <button @click="toggleModalTwo">Challenge</button>
   <!-- Click Event Modifiers eg @click.alt -->
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app , .modals{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
